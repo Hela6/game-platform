@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Averia+Sans+Libre:wght@300;700&display=swap');
+
+html, body {
+   font-family: 'Average Sans', sans-serif;
+   width: 100%;
+   background: linear-gradient(0deg,#1f0541,#040b0c 80%) no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   margin: 0 auto;
+}
+
+#nav_logo {
+    width: 100px;
+    margin-top: 10px;
+}
+
+h1, h2, h3 {
+   font-family: 'Averia Sans Libre', cursive;
+}
+
+h3 {
+    color: rgb(89, 164, 226);
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: rgb(89, 164, 226);
+}
+
+nav {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #040b0c;
+    height: 100px;
+}
+ 
+.link_to_game {
+    font-family: 'Averia Sans Libre', cursive;
+    list-style-type: none;
+    margin: 5px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.link_to_game > a {
+    text-decoration: none;
+    color: rgb(223, 116, 223);
+}
+
+.link_to_game > a:hover {
+    color: rgb(25, 129, 214);
+}
+
+#burger_btn {
+    width: 60px;
+    margin: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 100;
+    
+}
+
+#burger_img {
+    width: 30px;
+}
+
+#menu_links {
+    display: none;
+    background-color: #040b0c;
+    z-index: 99;
+    top: 5px;
+}
+
+nav, section {
+    width: 50%;
+    display: flex;
+    color: whitesmoke;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+main {
+    z-index: 1;
+}
+
+section {
+    background-color: rgba(247, 242, 242, 0.062);
+    min-height: 30vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 15px auto;
+    ;
+}
+
+section > p {
+    margin: 5px auto;
+    max-width: 80%;
+}
+
+#accueil {
+    justify-content: center;
+}
+
+.game_type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+li {
+    margin: 10px auto;
+}
+
+img {
+    width: 120px;
+    border-radius: 3px;
+}
+
+button {
+    background-color: rgb(91, 93, 235);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    border: solid white 2px;
+    border-radius: 3px;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: rgb(201, 164, 250);
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
+
+.arrow_on_play_btn {
+    display: none;
+}
+
+.arrow_on_play_btn:hover {
+    display: inline-block;
+}
+
+#reviews {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2;
+}
+
+article {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    background-color: rgb(9, 4, 12);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+article > img {
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+.gamer {
+    width: 100px;
+    margin-left: 10px;
+}
+
+h4 {
+    margin: 3px auto;
+}
+
+.gamer > p {
+    text-align: inherit;
+    margin: 5px auto;
+}
+
+footer {
+    color: white;
+    background-color: rgba(230, 225, 225, 0.199);
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer_logo {
+    flex-direction: row;
+}
+
+.logo {
+    width: 25px;
+    margin: 20px 15px;
+}
+
+/* responsive for smaller screens________________________________________________________________________________*/
+@media screen and (max-width: 1268px) {
+    nav, section {
+        width: 80%;
+    }
+
+    section > p {
+        max-width: 80%;
+    }
+  }
+
+/* responsive for tablets________________________________________________________________________________*/
+@media screen and (max-width: 768px) {
+    nav, section {
+        width: 100%;
+    }
+
+    section > p {
+        max-width: 80%;
+    }
+
+    #reviews {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3;
+    }
+  }
+
+  /* responsive for smartphones________________________________________________________________________________*/
+@media screen and (max-width: 668px) {
+    nav {
+        padding: 10px;
+        height: 60px;
+    }
+
+    #nav_logo {
+        width: 60px;
+        margin-top: 15px;
+    }
+
+    #burger_btn {
+        width: 40px;
+        margin: 15px 5px 5px 5px;
+    }
+    
+    #burger_img {
+        width: 30px;
+    }
+
+    .link_to_game {
+        font-size: 0.8em;
+    }
+
+    section > p {
+        max-width: 90%;
+    }
+
+    #reviews {
+        grid-template-columns: 1fr;
+        grid-template-rows: 6;
+    }
+
+    .game_type {
+        flex-direction: column;
+    }
+}
+
