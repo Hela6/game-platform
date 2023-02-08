@@ -147,12 +147,9 @@ button > a {
     color: white;
 }
 
-.arrow_on_play_btn {
-    display: none;
-}
-
-.arrow_on_play_btn:hover {
-    display: inline-block;
+button:hover > a {
+    color: #1f0541;
+    font-weight: bold;
 }
 
 #reviews {
@@ -163,8 +160,8 @@ button > a {
 }
 
 article {
-    width: 250px;
-    height: 200px;
+    width: 225px;
+    height: 175px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -215,12 +212,31 @@ footer {
     margin: 20px 15px;
 }
 
+/* responsive for players reviews________________________________________________________________________________*/
+@media screen and (max-width: 1768px) {
+    #reviews {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3;
+    }
+  }
+  @media screen and (max-width: 1268px) {
+    #reviews {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    #reviews {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3;
+    }
+  }
+
 /* responsive for smaller screens________________________________________________________________________________*/
 @media screen and (max-width: 1268px) {
     nav, section {
         width: 80%;
     }
-
     section > p {
         max-width: 80%;
     }
@@ -234,11 +250,6 @@ footer {
 
     section > p {
         max-width: 80%;
-    }
-
-    #reviews {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3;
     }
   }
 
