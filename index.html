@@ -13,20 +13,22 @@
 <body>
 
     <nav>
-        <div>
-            <img id="nav_logo" src="images/game_console.png" alt="">
-        </div>
-
-        <div id="menu">
-            <ul id="menu_links">
-                <li class="link_to_game"><a href="#RPC_game">Rock Paper Scissors</a></li>
-                <li class="link_to_game"><a href="#TTT_game">Tic Tac Toe</a></li>
-                <li class="link_to_game"> <a href="#FTV_game">Fight the Viking</a></li>
-            </ul>
-        </div>
-        <button id="burger_btn">
-            <img id="burger_img" src="images/hamburger.png" alt="">
-        </button>
+        <a href="#" class="nav_icon" aria-label="visit homepage" aria-current="page">
+            <img src="images/game_console.png" class="nav_logo" alt="game logo">
+        </a>
+        <div class="main_navlinks">
+            <button onclick="toggleNav()" class="hamburger" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navlinks_container">
+                <a href="#" onclick="toggleNav()" class="navlinks">Home</a>
+                <a href="#RPC_game" onclick="toggleNav()" class="anchor" class="navlinks">Rock Paper Scissors</a>
+                <a href="#TTT_game" onclick="toggleNav()" class="anchor" class="navlinks">Tic Tac Toe</a>
+                <a href="#FTV_game" onclick="toggleNav()" class="anchor" class="navlinks">Fight the Viking</a>
+            </div>
+            </div>
     </nav>
 
     <main>
@@ -42,7 +44,7 @@
             </p>
         </section>
 
-        <section id="RPC_game">
+        <section class="game" id="RPC_game">
             <h3>Rock - Paper - Scissors</h3>
             <p>“Rock paper scissors” is a simple and interesting game. Many of us used to play it in a school to resolve
                 disputes or just to spend some time.</p><br>
@@ -52,18 +54,12 @@
 
             <div class="game_type">
                 <img src="images/rock_paper_scissors.png" alt="">
-                <ul>
-                    <li>logiq</li>
-                    <li>focus</li>
-                    <li>dynamic</li>
-                </ul>
             </div>
 
-            <button><a href="">play to this game ➜</a>
-            </button>
+            <a href="" class="to_game">play to this game ➜</a>
         </section>
 
-        <section id="TTT_game">
+        <section class="game" id="TTT_game">
             <h3>Tic Tac Toe</h3>
             <p>Tic-tac-toe is a game for two players, X and O, who take turns marking the spaces in a 3 x 3 grid. The
                 player
@@ -71,17 +67,12 @@
             </p>
             <div class="game_type">
                 <img src="images/Tic_Tac_Toe.png" alt="">
-                <ul>
-                    <li>logiq</li>
-                    <li>focus</li>
-                    <li>dynamic</li>
-                </ul>
             </div>
 
-            <button><a href="">play to this game<span class="arrow_on_play_btn"> ➜</span></a></button>
+            <a href="" class="to_game">play to this game<span class="arrow_on_play_btn"> ➜</span></a>
         </section>
 
-        <section id="FTV_game">
+        <section class="game" id="FTV_game">
             <h3>Fight the Viking</h3>
             <p>Fight the Viking is a mini role player game where you can let your anger flow after a stressful day!
                 You will have many possibilities to attack your opponent, an arrogant and vicious viking warrior.
@@ -89,18 +80,13 @@
             </p>
             <div class="game_type">
                 <img src="images/Vikings.png" alt="">
-                <ul>
-                    <li>logiq</li>
-                    <li>focus</li>
-                    <li>dynamic</li>
-                </ul>
             </div>
 
-            <button><a href="">play to this game<span class="arrow_on_play_btn"> ➜</span></a></button>
+            <a href="" class="to_game">play to this game<span class="arrow_on_play_btn"> ➜</span></a>
         </section>
 
         <section>
-            <h4>Players rewiews </h4>
+            <h4>Players rewiews : </h4>
             <div id="reviews">
                 <article>
                     <img src="images/Lex.png" alt="">

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Averia+Sans+Libre:wght@300;700&display=swap');
-
+ 
 html, body {
    font-family: 'Average Sans', sans-serif;
    width: 100%;
@@ -9,9 +9,75 @@ html, body {
    margin: 0 auto;
 }
 
-#nav_logo {
+html {
+    scroll-padding-top: 80px; /* height of your sticky header */
+  }
+
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav, section {
+    width: 50%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+nav {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #040b0c;
+    height: 100px;
+    box-shadow: inset 0px -1px 0px rgb(89, 164, 226);
+}
+
+.nav_logo {
     width: 100px;
     margin-top: 10px;
+}
+.hamburger {
+    display: none;
+}
+
+.navlinks_container {
+    display: flex;
+    flex-direction: row;
+}
+ 
+.navlinks_container a {
+    font-family: 'Averia Sans Libre', cursive;
+    text-decoration: none;
+    color: rgb(223, 116, 223);
+    margin: 0 10px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.navlinks_container a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: rgb(25, 129, 214);
+    transition: transform 0.3s ease-out;
+}
+
+.navlinks_container a:hover::after {
+    transform: scaleX(1);
 }
 
 h1, h2, h3 {
@@ -28,67 +94,6 @@ h1 {
     color: rgb(89, 164, 226);
 }
 
-nav {
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #040b0c;
-    height: 100px;
-}
- 
-.link_to_game {
-    font-family: 'Averia Sans Libre', cursive;
-    list-style-type: none;
-    margin: 5px auto;
-    font-weight: bold;
-    text-align: center;
-}
-
-.link_to_game > a {
-    text-decoration: none;
-    color: rgb(223, 116, 223);
-}
-
-.link_to_game > a:hover {
-    color: rgb(25, 129, 214);
-}
-
-#burger_btn {
-    width: 60px;
-    margin: 5px;
-    background-color: transparent;
-    border-color: transparent;
-    z-index: 100;
-    
-}
-
-#burger_img {
-    width: 30px;
-}
-
-#menu_links {
-    display: none;
-    background-color: #040b0c;
-    z-index: 99;
-    top: 5px;
-}
-
-nav, section {
-    width: 50%;
-    display: flex;
-    color: whitesmoke;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
-main {
-    z-index: 1;
-}
-
 section {
     background-color: rgba(247, 242, 242, 0.062);
     min-height: 30vh;
@@ -97,8 +102,12 @@ section {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    margin: 15px auto;
-    ;
+    color: whitesmoke;
+    margin: 0 auto;
+}
+
+section.game {
+    margin: 20px auto;
 }
 
 section > p {
@@ -127,29 +136,23 @@ img {
     border-radius: 3px;
 }
 
-button {
+.to_game {
     background-color: rgb(91, 93, 235);
     color: white;
     padding: 10px;
-    font-weight: bold;
     font-size: 1em;
     border: solid white 2px;
     border-radius: 3px;
     margin: 20px auto;
-}
-
-button:hover {
-    background-color: rgb(201, 164, 250);
-}
-
-button > a {
     text-decoration: none;
     color: white;
 }
 
-button:hover > a {
+.to_game:hover {
+    background-color: rgb(201, 164, 250);
     color: #1f0541;
     font-weight: bold;
+    transition: color background-color 0.3s ease-in-out;
 }
 
 #reviews {
@@ -257,33 +260,122 @@ footer {
 @media screen and (max-width: 668px) {
     nav {
         padding: 10px;
-        height: 60px;
+        height: 50px; 
     }
 
-    #nav_logo {
-        width: 60px;
-        margin-top: 15px;
+    html {
+        scroll-padding-top: 50px; /* height of your sticky header */
+      }
+
+    .nav_icon {
+    order: 2;
+    margin-left: auto;
     }
 
-    #burger_btn {
-        width: 40px;
-        margin: 15px 5px 5px 5px;
+    .main_navlinks {
+        order: 1;
+    }
+
+    .nav_logo {
+        width: 50px;
+        margin: 15px auto 10px auto;
     }
     
-    #burger_img {
+/* burger menu ________________________________________*/
+    .hamburger {
         width: 30px;
+        height: 30px;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        background: #040b0c;
+        align-items: center;
+        position: relative;
     }
 
-    .link_to_game {
+    .hamburger span {
+        display: block;
+        width: 80%;
+        height: 2px;
+        background: rgb(89, 164, 226);
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.3s 0.15s ease-out;
+    }
+
+    .hamburger span:nth-child(1) {
+        transform: translateY(7px);
+    }
+
+    .hamburger span:nth-child(3) {
+        transform: translateY(-7px);
+    }
+
+    .hamburger span:nth-child(1),
+    .hamburger span:nth-child(3) {
+        transition: transform 0.3s ease-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translate(0) rotate(135deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transition: opacity 0s ease-out;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translate(0) rotate(-135deg);
+    }
+
+    .navlinks_container {
+        flex-direction: column;
+        background: #040b0c;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 100vh;
+        padding: 15px 50px 15px 20px;
+        border-right: 1px solid rgb(89, 164, 226);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .navlinks_container.open {
+        transform: translateX(0%);
+    }
+    
+    .navlinks_container a {
+        font-family: 'Averia Sans Libre', cursive;
+        margin: 10px;
         font-size: 0.8em;
     }
 
-    h1 {
-        font-size: 1.5em;
+    .navlinks_container a:hover::after {
+        transform: scaleX(0);
     }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2, h3 {
+        font-size: 0.9em;
+     }
 
     section > p {
         max-width: 90%;
+    }
+
+    .game_type {
+        flex-direction: row;
+        margin: 20px auto;
+    }
+
+    button {
+        margin: 15px auto;
     }
 
     #reviews {
@@ -291,8 +383,5 @@ footer {
         grid-template-rows: 6;
     }
 
-    .game_type {
-        flex-direction: column;
-    }
 }
 

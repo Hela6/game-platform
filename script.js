@@ -1,21 +1,11 @@
+const hamburgerToggler = document.querySelector(".hamburger");
+const navLinksContainer = document.querySelector(".navlinks_container");
 
-let showMenuButton = document.querySelector("#burger_btn");
 
-showMenuButton.addEventListener("click", () => {
-    deployBurgerMenu();
-});
+function toggleNav() {
+    hamburgerToggler.classList.toggle("open");
 
-let menuLinks = document.querySelector("#menu_links");
-
-function deployBurgerMenu() {
-
-    if (menuLinks.style.display === "none") {
-        menuLinks.style.display = "block";
-    }
-    else {
-        menuLinks.style.display = "none";
-    }
+    navLinksContainer.classList.toggle("open");
 }
 
-/*******************************************************************/
 
